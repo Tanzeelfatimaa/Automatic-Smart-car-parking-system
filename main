@@ -1,0 +1,168 @@
+include <LiquidCrystal.h>
+
+#include <Servo.h>
+
+Servo myservo; 
+
+// creale servo object t0 control a servo
+
+int ir1 =A0;
+
+int ir2=A1;
+
+int ir3=A2;
+
+int ir4=A3;
+
+int ir5=A4;
+
+const int rs = 12. en 11, d4= 5, d5 = 4, d6 =3, d7= 2:
+
+LiquidCrystal lcd(rs, en, d4, ds, d6, d7);
+
+int pos= 0 // variable to store the servo position
+
+void setup() {
+
+myservo.attach(9); // attaches the servo on pin 9 to the servo object
+
+pinMode(ir1.INPUT);
+
+pinMode(ir2,INPUT);
+
+pinMode(ir3,INPUT);
+
+pinMode(ir4INPUT);
+
+pinMode(irs,INPUT);
+
+Serial.begin(9600);
+
+lcd.begin(16. 2);
+
+lcd.setCursor(0,0);
+
+print("EMPTY SLOTS NO.");}
+
+void loop()
+
+int ansl=digitalRead(ir1);
+
+int ans2=digitalRead(ir2);
+
+int ans3=digitalRead(ir3).
+
+int ans4=digitalRead(ir4):
+
+int ans5=digitalRead(ir5):
+
+if (ans4==LOW){
+
+for (pos= 0; pos <= 90; pos += 1) { // goes from 0 degrees to 180 degrees
+
+// in steps ofI degree
+
+pos=90:
+
+// tell servo to go to position in variable 'pos'
+
+myservo.write(pos);
+
+delay(15)
+  }
+  }
+//waits 15ms for the servo to reach the position
+
+else
+
+pos= 0;
+
+myservo.write(pos);
+
+if(anss=LOW)
+{
+
+for (pos=0; pos <=90; pos+=1){//goes from 0 degrees to 180 degrees
+
+// in steps of | degree
+
+pos=90;
+
+myservo. write(pos);
+
+//tell servo to go to position in variable 'pos
+
+delay(15):
+
+//waits 15ms for the servo to reach the position
+
+else
+
+pos = 0;
+
+myservo.write(pos);}
+
+if(ans1==LOW)
+{
+
+lcd.display();
+
+Icd.setCursor(1,1);
+
+led.print(" "):
+
+delay(1000):
+}
+else
+
+{
+
+lcd.setCursor(1,1);
+
+lcd.print("1");
+
+delay(1000);
+}
+if(ans2==LOW)
+
+{
+
+ lcd.display();
+
+Icd.setCursor(3,1);
+
+lcd.prin(" ")
+
+delay(1000)
+
+}
+
+else
+
+Icd.setCursor(3,1);
+
+Icd.print("2");
+
+//delay(1000);
+}
+
+if(ans3==LOW){
+
+icd.display();
+
+led.setCursor(5,1);
+
+led.print(" "):
+
+delay(1000);
+
+}
+
+else
+{
+lcd.setCursor(5.1);
+
+led.print("3");
+
+delay(1000);
+}}}
